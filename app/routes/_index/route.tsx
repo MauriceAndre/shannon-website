@@ -41,9 +41,11 @@ export default function Index() {
               src="app/assets/background.png"
               alt="Calgary"
               className={`${styles["hero-image-background"]} absolute`}
-              style={{
-                filter: `drop-shadow(0 0 20px ${currentColor}) drop-shadow(0 0 40px ${currentColor})`,
-              }}
+              style={
+                {
+                  // filter: `drop-shadow(0 0 5px ${currentColor}) drop-shadow(0 0 10px ${currentColor})`,
+                }
+              }
             />
             <img
               src="app/assets/clouds.png"
@@ -55,7 +57,7 @@ export default function Index() {
               alt="Calgary"
               className={`${styles["hero-image-tower"]} absolute`}
               style={{
-                filter: `drop-shadow(0 0 20px ${currentColor}) drop-shadow(0 0 40px ${currentColor})`,
+                filter: `drop-shadow(0 0 30px ${currentColor}) drop-shadow(0 0 60px ${currentColor})`,
               }}
             />
             <img
