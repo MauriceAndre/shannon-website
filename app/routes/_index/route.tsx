@@ -25,7 +25,7 @@ const colors = [
 
 const getCurrentColor = () => {
   const day = new Date().getDay();
-  return colors[6];
+  return colors[day];
 };
 
 export default function Index() {
