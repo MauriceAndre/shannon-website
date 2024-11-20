@@ -33,25 +33,37 @@ export default function Index() {
   const currentColor = getCurrentColor();
 
   return (
-    <Parallax pages={1.6} ref={ref}>
-      <ParallaxLayer offset={0} speed={1.2} style={{ zIndex: 2 }}>
+    <Parallax pages={2} ref={ref}>
+      <ParallaxLayer offset={0} speed={0} style={{ zIndex: 0 }}>
         <div className="flex flex-col items-center p-8 h-full relative">
           <div className="flex justify-center items-center relative w-full h-full">
             <img
               src="/background.png"
               alt="Calgary"
               className={`${styles["hero-image-background"]} absolute`}
-              style={
-                {
-                  // filter: `drop-shadow(0 0 5px ${currentColor}) drop-shadow(0 0 10px ${currentColor})`,
-                }
-              }
+              style={{
+                filter: `drop-shadow(0 0 5px ${currentColor}) drop-shadow(0 0 10px ${currentColor})`,
+              }}
             />
+          </div>
+        </div>
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={0} speed={0.5} style={{ zIndex: 0 }}>
+        <div className="flex flex-col items-center p-8 h-full relative">
+          <div className="flex justify-center items-center relative w-full h-full">
             <img
               src="/clouds.png"
               alt="Calgary"
               className={`${styles["hero-image-clouds"]} absolute`}
             />
+          </div>
+        </div>
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={0} speed={0} style={{ zIndex: 0 }}>
+        <div className="flex flex-col items-center p-8 h-full relative">
+          <div className="flex justify-center items-center relative w-full h-full">
             <img
               src="/tower.png"
               alt="Calgary"
@@ -60,16 +72,27 @@ export default function Index() {
                 filter: `drop-shadow(0 0 30px ${currentColor}) drop-shadow(0 0 60px ${currentColor})`,
               }}
             />
+          </div>
+        </div>
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={0} speed={0} style={{ zIndex: 0 }}>
+        <div className="flex flex-col items-center p-8 h-full relative">
+          <div className="flex justify-center items-center relative w-full h-full">
             <img
               src="/calgary.png"
               alt="Calgary"
               className={`${styles["hero-image"]} absolute`}
             />
           </div>
-          <div className="flex-grow"></div>
+        </div>
+      </ParallaxLayer>
+
+      <ParallaxLayer offset={0.9} speed={0} style={{ zIndex: 2 }}>
+        <div className="flex flex-col items-center h-full relative">
           <button
             onClick={() => ref.current?.scrollTo(1)}
-            className="bg-white text-black p-2 rounded-full mt-2 w-40 border-2 border-black z-10"
+            className="bg-white text-black p-2 rounded-full w-40 border-2 border-black z-10"
           >
             Pick a class <br />
             <strong>↓</strong>
@@ -77,7 +100,7 @@ export default function Index() {
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer offset={0.9} speed={0.5}>
+      <ParallaxLayer offset={1} speed={0}>
         <div className="flex flex-col items-center content-center justify-around h-full">
           <h2 className="text-5xl font-bold mb-4">Pick a class</h2>
           <div className="flex flex-col md:flex-row justify-around content-center w-full">
