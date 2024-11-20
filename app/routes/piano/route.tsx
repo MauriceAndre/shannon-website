@@ -1,10 +1,4 @@
-import { LoaderFunctionArgs } from "@remix-run/node";
 import { MetaFunction } from "@remix-run/react";
-import { getUrlOriginWithPath } from "~/utils";
-
-export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return { canonicalUrl: getUrlOriginWithPath(request.url) };
-};
 
 export default function PianoPage() {
   return (
@@ -14,7 +8,7 @@ export default function PianoPage() {
   );
 }
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
+export const meta: MetaFunction = ({ data }) => {
   const title = "Portfolio App - About Page";
   const description = "Welcome to the Portfolio App About Page";
   const imageUrl = "https://my-portfolio/image.png";
@@ -28,7 +22,6 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     {
       tagName: "link",
       rel: "canonical",
-      href: data?.canonicalUrl,
     },
     {
       property: "robots",
