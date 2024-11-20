@@ -14,18 +14,18 @@ export const meta: MetaFunction = () => {
 };
 
 const colors = [
-  "#34e3f3", // Sunday
-  "#49bb22", // Monday
-  "#f31a76", // Tuesday
-  "#bb9ef8", // Wednesday
-  "#fab03c", // Thursday
-  "#ca1010", // Friday
-  "#c481e6", // Saturday
+  "#34e3ff", // Sunday
+  "#37dd00", // Monday
+  "#ff0e72", // Tuesday
+  "#8f5cff", // Wednesday
+  "#ffa91f", // Thursday
+  "#f50000", // Friday
+  "#c247ff", // Saturday
 ];
 
 const getCurrentColor = () => {
   const day = new Date().getDay();
-  return colors[day];
+  return colors[6];
 };
 
 export default function Index() {
