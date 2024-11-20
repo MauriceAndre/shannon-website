@@ -15,7 +15,11 @@
     width: 200px;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+
+  @media (min-width: 1400px) {
     width: 1200px;
   }
 }
@@ -36,7 +40,15 @@
     width: 200px;
   }
 
+  @media (min-width: 800px) {
+    width: 800px;
+  }
+
   @media (min-width: 1200px) {
+    width: 1000px;
+  }
+
+  @media (min-width: 1400px) {
     width: 1400px;
   }
 }
