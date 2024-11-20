@@ -38,7 +38,7 @@ export default function Index() {
         <div className="flex flex-col items-center p-8 h-full relative">
           <div className="flex justify-center items-center relative w-full h-full">
             <img
-              src="app/assets/background.png"
+              src="/background.png"
               alt="Calgary"
               className={`${styles["hero-image-background"]} absolute`}
               style={
@@ -48,12 +48,12 @@ export default function Index() {
               }
             />
             <img
-              src="app/assets/clouds.png"
+              src="/clouds.png"
               alt="Calgary"
               className={`${styles["hero-image-clouds"]} absolute`}
             />
             <img
-              src="app/assets/tower.png"
+              src="/tower.png"
               alt="Calgary"
               className={`${styles["hero-image-tower"]} absolute`}
               style={{
@@ -61,7 +61,7 @@ export default function Index() {
               }}
             />
             <img
-              src="app/assets/calgary.png"
+              src="/calgary.png"
               alt="Calgary"
               className={`${styles["hero-image"]} absolute`}
             />
