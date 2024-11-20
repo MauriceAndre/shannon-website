@@ -88,7 +88,7 @@ export default function Index() {
         </div>
       </ParallaxLayer>
 
-      <ParallaxLayer offset={0.9} speed={0} style={{ zIndex: 2 }}>
+      <ParallaxLayer offset={0.9} speed={3} style={{ zIndex: 2 }}>
         <div className="flex flex-col items-center h-full relative">
           <button
             onClick={() => ref.current?.scrollTo(1)}
