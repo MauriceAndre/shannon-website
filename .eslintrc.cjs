@@ -7,6 +7,7 @@
 /** @type {import('eslint').Linter.Config} */
 module.exports = {
   root: true,
+
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
@@ -71,6 +72,9 @@ module.exports = {
         "plugin:import/recommended",
         "plugin:import/typescript",
       ],
+      rules: {
+        "@typescript-eslint/no-explicit-any": "off",
+      },
     },
 
     // Node
