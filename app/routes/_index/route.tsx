@@ -124,7 +124,7 @@ export default function Index() {
             onClick={() => ref.current?.scrollTo(1)}
             className="bg-white text-black p-2 rounded-full w-40 border-2 border-black z-10"
           >
-            Pick a class <br />
+            Pick a Class <br />
             <strong>↓</strong>
           </button>
         </div>
