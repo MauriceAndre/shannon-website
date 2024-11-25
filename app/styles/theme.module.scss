@@ -5,3 +5,15 @@ $text-color: white;
 
 $primary-color: #a2a4c3;
 $secondary-color: #797b9a;
+
+.primary {
+  color: $primary-color;
+}
+
+.secondary {
+  color: $secondary-color;
+}
+
+:export {
+  primaryColor: $primary-color;
+}
