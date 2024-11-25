@@ -1,5 +1,5 @@
-import styles from "./Spinner.module.scss";
 import theme from "../../styles/theme.module.scss";
+import styles from "./Spinner.module.scss";
 
 interface SpinnerProps {
   color?: string;
@@ -11,15 +11,8 @@ const Spinner = ({ color = theme.primaryColor }: SpinnerProps) => {
       className={styles.container}
       style={{ "--uib-color": color } as React.CSSProperties}
     >
-      <div className={styles.cube}>
-        <div className={styles.cube__inner}></div>
-      </div>
-      <div className={styles.cube}>
-        <div className={styles.cube__inner}></div>
-      </div>
-      <div className={styles.cube}>
-        <div className={styles.cube__inner}></div>
-      </div>
+      <div className={styles.half}></div>
+      <div className={styles.half}></div>
     </div>
   );
 };
