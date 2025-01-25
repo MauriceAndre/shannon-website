@@ -20,6 +20,7 @@
     "framer-motion": "^11.11.17",
     "isbot": "^4",
     "mini-svg-data-uri": "^1.4.4",
+    "motion": "^11.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.5.4"
