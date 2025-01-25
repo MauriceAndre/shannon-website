@@ -1,10 +1,23 @@
 import { MetaFunction } from "@remix-run/react";
+import Container from "~/components/Page/Container";
+import Page from "~/components/Page/Page";
 
 export default function EnglishPage() {
   return (
-    <div>
-      <h1>English Tutoring</h1>
-    </div>
+    <Container>
+      <Page background="#000000">
+        <h1>Page 1</h1>
+      </Page>
+      <Page background="#DD0000">
+        <h1>Page 2</h1>
+      </Page>
+      <Page background="#FFCC00">
+        <h1>Page 3</h1>
+      </Page>
+      <Page background="#00CC00">
+        <h1>Page 4</h1>
+      </Page>
+    </Container>
   );
 }
 
