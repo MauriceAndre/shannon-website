@@ -1,6 +1,8 @@
 import { MetaFunction } from "@remix-run/react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import { Marquee } from "~/components/Marquee/Marquee";
+import Fullpage from "~/components/Fullpage/Fullpage";
+import Page from "~/components/Fullpage/Page";
+import { motion } from "motion/react";
 
 const reviews = [
   {
@@ -30,36 +32,114 @@ const ReviewCard = ({ name, body }: { name: string; body: string }) => {
 
 export default function PianoPage() {
   return (
-    <Parallax pages={6}>
-      <ParallaxLayer offset={0} speed={0.5}>
+    <Fullpage>
+      <Page title="Intro" anchorName="intro">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12 text-center">
-            <h1 className="text-4xl font-bold mb-4">Piano Lessons</h1>
-            <p className="text-xl text-gray-600">
+            <h1 className="text-8xl font-bold mb-4">Piano Lessons</h1>
+            <p className="text-xl text-gray-200">
               Nurturing Musical Excellence for All Ages and Levels
             </p>
+            {/* <div style={{ height: "200px" }}></div> */}
           </section>
-          <section className="mb-12 text-center">
+          {/* <section className="mb-12 text-center">
             <p className="text-xl text-gray-600">
               Hi, I am Shannon, your dedicated piano teacher with over 10 years
               of experience. Join me in a musical journey where we explore the
               beauty of piano together.
             </p>
-          </section>
+          </section> */}
+          <motion.img
+            className="absolute invert"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ repeat: Infinity, duration: 4, delay: 0 }}
+            src="/music-note-1.png"
+            style={{
+              width: "100px",
+              top: "20%",
+              left: "15%",
+            }}
+          />
+          <motion.img
+            className="absolute invert"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}
+            src="/music-note-3.png"
+            style={{
+              width: "70px",
+              top: "10%",
+              left: "50%",
+            }}
+          />
+          <motion.img
+            className="absolute invert"
+            animate={{ y: [0, -20, 0] }}
+            transition={{ repeat: Infinity, duration: 4, delay: 1 }}
+            src="/music-note-2.png"
+            style={{
+              width: "100px",
+              top: "30%",
+              right: "15%",
+            }}
+          />
         </div>
-      </ParallaxLayer>
+        {/* <img
+          src="/piano-keyboard.svg"
+          alt="Piano keyboard"
+          style={{
+            position: "absolute",
+            bottom: "15%",
+            left: 0,
+            width: "100%",
+          }}
+        /> */}
+        <div className="absolute bottom-8 w-full flex flex-col items-center text-center">
+          <p className="text-white mb-2">
+            Let's explore the beauty of piano together.
+          </p>
+          <a href="#meet-your-teacher">
+            <motion.img
+              src="/arrow-down.svg"
+              className="cursor-pointer invert"
+              alt="Scroll down"
+              style={{ width: "40px" }}
+              whileHover={{ filter: "invert(1) drop-shadow(0 0 10px white)" }}
+              animate={{
+                y: [0, 10, 10, 10, 0],
+                transition: {
+                  repeat: Infinity,
+                  duration: 2,
+                  times: [0, 0.5, 0.5, 0.5, 1],
+                  repeatDelay: 1,
+                },
+              }}
+            />
+          </a>
+        </div>
+      </Page>
 
-      <ParallaxLayer offset={1} speed={0.5}>
+      <Page title="Meet Your Teacher" anchorName="meet-your-teacher">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="grid md:grid-cols-2 gap-8 mb-12">
             <div>
-              <img
+              <motion.img
                 src="/shannon.jpg"
                 alt="Shannon teaching piano"
                 className="rounded-lg shadow-lg"
+                initial={{ x: -100, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  ease: "easeInOut",
+                  duration: 1,
+                }}
               />
             </div>
-            <div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1.5 }}
+            >
               <h2 className="text-2xl font-semibold mb-4">Meet Your Teacher</h2>
               <ul className="space-y-2">
                 <li>✨ 10 years of teaching experience</li>
@@ -68,19 +148,21 @@ export default function PianoPage() {
                 <li>📚 Specialized in Classical, RCM, and Theory</li>
               </ul>
               <div className="mt-4">
-                <button
-                  className="bg-gray-600 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition"
+                <motion.button
+                  className="bg-gray-600 text-white px-8 py-3 rounded-lg"
+                  whileHover={{ scale: 1.05, backgroundColor: "#4B5563" }}
+                  transition={{ type: "spring", stiffness: 300 }}
                   onClick={() => (window.location.href = "/bio")}
                 >
                   Detailed Bio
-                </button>
+                </motion.button>
               </div>
-            </div>
+            </motion.div>
           </section>
         </div>
-      </ParallaxLayer>
+      </Page>
 
-      <ParallaxLayer offset={2} speed={0.5}>
+      <Page title="The Studio Experience" anchorName="studio-experience">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">
@@ -95,9 +177,9 @@ export default function PianoPage() {
             </p>
           </section>
         </div>
-      </ParallaxLayer>
+      </Page>
 
-      <ParallaxLayer offset={2.5} speed={0.5}>
+      <Page title="Lesson Scheduling" anchorName="lesson-scheduling">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">Lesson Scheduling</h2>
@@ -110,9 +192,9 @@ export default function PianoPage() {
             </p>
           </section>
         </div>
-      </ParallaxLayer>
+      </Page>
 
-      <ParallaxLayer offset={3} speed={0.5}>
+      <Page title="Meet Clementine" anchorName="meet-clementine">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="bg-gray-50 p-6 rounded-lg mb-12">
             <h2 className="text-2xl font-semibold mb-4">
@@ -133,9 +215,9 @@ export default function PianoPage() {
             </div>
           </section>
         </div>
-      </ParallaxLayer>
+      </Page>
 
-      <ParallaxLayer offset={4} speed={0.5}>
+      <Page title="Student Reviews" anchorName="student-reviews">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">Student Reviews</h2>
@@ -146,9 +228,9 @@ export default function PianoPage() {
             </Marquee>
           </section>
         </div>
-      </ParallaxLayer>
+      </Page>
 
-      <ParallaxLayer offset={4.75} speed={0.5}>
+      <Page title="Start Your Musical Journey" anchorName="start-your-journey">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="text-center">
             <h2 className="text-2xl font-semibold mb-4">
@@ -159,9 +241,9 @@ export default function PianoPage() {
             </button>
           </section>
         </div>
-      </ParallaxLayer>
+      </Page>
 
-      <ParallaxLayer offset={5} speed={0.5}>
+      <Page title="Frequently Asked Questions" anchorName="faq">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12">
             <h2 className="text-2xl font-semibold mb-4">
@@ -207,8 +289,8 @@ export default function PianoPage() {
             </div>
           </section>
         </div>
-      </ParallaxLayer>
-    </Parallax>
+      </Page>
+    </Fullpage>
   );
 }
 
