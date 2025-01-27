@@ -122,10 +122,14 @@ export default function Index() {
         <div className="flex flex-col items-center h-full relative">
           <button
             onClick={() => ref.current?.scrollTo(1)}
-            className="bg-white text-black p-2 rounded-full w-40 border-2 border-black z-10"
+            className="bg-white text-black p-2 rounded-full w-40 border-2 border-black z-10 flex flex-col items-center"
           >
             Pick a Class <br />
-            <strong>↓</strong>
+            <img
+              src="/arrow-down.svg"
+              alt="Scroll down"
+              style={{ width: "20px", marginTop: "4px" }}
+            />
           </button>
         </div>
       </ParallaxLayer>
