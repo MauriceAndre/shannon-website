@@ -1,23 +1,20 @@
 import { MetaFunction } from "@remix-run/react";
-import Container from "~/components/Page/Container";
-import Page from "~/components/Page/Page";
+import { motion } from "motion/react";
+import Page from "~/components/Fullpage/Page";
+import Fullpage from "~/components/Fullpage/Fullpage";
 
 export default function EnglishPage() {
   return (
-    <Container>
-      <Page background="#000000">
-        <h1>Page 1</h1>
+    <Fullpage>
+      <Page title="Section 1">
+        <div className="flex flex-col items-center justify-center h-screen">
+          <motion.h1>Page 1</motion.h1>
+        </div>
       </Page>
-      <Page background="#DD0000">
-        <h1>Page 2</h1>
+      <Page title="Section 2">
+        <p>Section 2</p>
       </Page>
-      <Page background="#FFCC00">
-        <h1>Page 3</h1>
-      </Page>
-      <Page background="#00CC00">
-        <h1>Page 4</h1>
-      </Page>
-    </Container>
+    </Fullpage>
   );
 }
 
