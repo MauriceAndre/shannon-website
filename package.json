@@ -13,6 +13,11 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.7.2",
+    "@fortawesome/free-brands-svg-icons": "^6.7.2",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
+    "@fullpage/react-fullpage": "^0.1.47",
     "@react-spring/parallax": "^9.7.5",
     "@remix-run/node": "^2.14.0",
     "@remix-run/react": "^2.14.0",
