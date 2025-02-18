@@ -4,6 +4,7 @@ import Fullpage from "~/components/Fullpage/Fullpage";
 import Page from "~/components/Fullpage/Page";
 import { motion } from "motion/react";
 import Footer from "~/components/Footer/Footer";
+import FAQ from "~/components/FAQ/FAQ";
 
 const reviews = [
   {
@@ -49,6 +50,28 @@ const Section = ({
     </Page>
   );
 };
+
+const faqItems = [
+  {
+    question: "What ages do you teach?",
+    answer: "I teach students of all ages, from young children to adults.",
+  },
+  {
+    question: "Do I need my own piano?",
+    answer:
+      "While having your own piano is beneficial for practice, I also offer guidance on selecting the right instrument for your needs.",
+  },
+  {
+    question: "How often are lessons?",
+    answer:
+      "Lessons are typically held once a week, but I can accommodate different schedules as needed.",
+  },
+  {
+    question: "Can I take online lessons?",
+    answer:
+      "Yes, I offer both in-person and online lessons to suit your preferences.",
+  },
+];
 
 export default function PianoPage() {
   const navigate = useNavigate();
@@ -299,37 +322,7 @@ export default function PianoPage() {
 
       <Section title="Frequently Asked Questions" anchorName="faq">
         <section className="mb-12">
-          <div className="space-y-4">
-            <div>
-              <h3 className="text-xl font-semibold">What ages do you teach?</h3>
-              <p>
-                I teach students of all ages, from young children to adults.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">Do I need my own piano?</h3>
-              <p>
-                While having your own piano is beneficial for practice, I also
-                offer guidance on selecting the right instrument for your needs.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">How often are lessons?</h3>
-              <p>
-                Lessons are typically held once a week, but I can accommodate
-                different schedules as needed.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-semibold">
-                Can I take online lessons?
-              </h3>
-              <p>
-                Yes, I offer both in-person and online lessons to suit your
-                preferences.
-              </p>
-            </div>
-          </div>
+          <FAQ items={faqItems} />
         </section>
       </Section>
 
