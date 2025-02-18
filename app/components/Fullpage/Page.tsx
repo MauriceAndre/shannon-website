@@ -6,11 +6,16 @@ interface PageProps {
   children?: React.ReactNode;
   style?: React.CSSProperties;
   fullpageApi?: FullpageApi;
+  footer?: boolean;
+  className?: string;
 }
 
-const Page = ({ children, style }: PageProps) => {
+const Page = ({ children, style, footer, className }: PageProps) => {
   return (
-    <div className="section" style={{ width: "100vw", ...style }}>
+    <div
+      className={`section ${footer ? "fp-auto-height" : ""} ${className || ""}`}
+      style={{ width: "100vw", ...style }}
+    >
       {children}
     </div>
   );
