@@ -1,8 +1,9 @@
-import { MetaFunction } from "@remix-run/react";
+import { MetaFunction, useNavigate } from "@remix-run/react";
 import { Marquee } from "~/components/Marquee/Marquee";
 import Fullpage from "~/components/Fullpage/Fullpage";
 import Page from "~/components/Fullpage/Page";
 import { motion } from "motion/react";
+import Footer from "~/components/Footer/Footer";
 
 const reviews = [
   {
@@ -30,7 +31,28 @@ const ReviewCard = ({ name, body }: { name: string; body: string }) => {
   );
 };
 
+const Section = ({
+  title,
+  anchorName,
+  children,
+}: {
+  title: string;
+  anchorName: string;
+  children: React.ReactNode;
+}) => {
+  return (
+    <Page title={title} anchorName={anchorName}>
+      <div className="max-w-5xl mx-auto px-4 py-8">
+        <h2 className="text-3xl font-semibold mb-4 text-center">{title}</h2>
+        {children}
+      </div>
+    </Page>
+  );
+};
+
 export default function PianoPage() {
+  const navigate = useNavigate();
+
   return (
     <Fullpage>
       <Page title="Intro" anchorName="intro">
@@ -40,15 +62,10 @@ export default function PianoPage() {
             <p className="text-xl text-gray-200">
               Nurturing Musical Excellence for All Ages and Levels
             </p>
-            {/* <div style={{ height: "200px" }}></div> */}
+            <button className="bg-blue-600 text-white mt-6 px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+              Book Your First Lesson
+            </button>
           </section>
-          {/* <section className="mb-12 text-center">
-            <p className="text-xl text-gray-600">
-              Hi, I am Shannon, your dedicated piano teacher with over 10 years
-              of experience. Join me in a musical journey where we explore the
-              beauty of piano together.
-            </p>
-          </section> */}
           <motion.img
             className="absolute invert"
             animate={{ y: [0, -20, 0] }}
@@ -118,184 +135,213 @@ export default function PianoPage() {
         </div>
       </Page>
 
-      <Page title="Meet Your Teacher" anchorName="meet-your-teacher">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <section className="grid md:grid-cols-2 gap-8 mb-12">
-            <div>
-              <motion.img
-                src="/shannon.jpg"
-                alt="Shannon teaching piano"
-                className="rounded-lg shadow-lg"
-                initial={{ x: -100, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{
-                  type: "spring",
-                  ease: "easeInOut",
-                  duration: 1,
-                }}
-              />
-            </div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1.5 }}
-            >
-              <h2 className="text-2xl font-semibold mb-4">Meet Your Teacher</h2>
-              <ul className="space-y-2">
-                <li>✨ 10 years of teaching experience</li>
-                <li>🎓 ARCT in Piano Performance</li>
-                <li>🎵 Bachelor of Music from UBC</li>
-                <li>📚 Specialized in Classical, RCM, and Theory</li>
-              </ul>
-              <div className="mt-4">
-                <motion.button
-                  className="bg-gray-600 text-white px-8 py-3 rounded-lg"
-                  whileHover={{ scale: 1.05, backgroundColor: "#4B5563" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  onClick={() => (window.location.href = "/bio")}
-                >
-                  Detailed Bio
-                </motion.button>
+      <Section title="Meet Your Teacher" anchorName="meet-your-teacher">
+        <section className="grid md:grid-cols-2 gap-8 mb-12">
+          <div>
+            <motion.img
+              src="/shannon.jpg"
+              alt="Shannon teaching piano"
+              className="rounded-lg shadow-lg"
+              initial={{ x: -100, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{
+                type: "spring",
+                ease: "easeInOut",
+                duration: 1,
+              }}
+            />
+          </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+          >
+            <p className="text-lg leading-relaxed mb-4">
+              Hello! 👋 I'm Shannon, and my passion for music has been a
+              lifelong journey. From the moment I touched the keys, I knew that
+              piano would be my calling. Teaching allows me to share this love
+              and inspire others to find their own musical voice. Whether it's
+              the thrill of mastering a new piece or the joy of expressing
+              oneself through music, I am dedicated to nurturing each student's
+              unique talents and fostering a deep appreciation for the art of
+              piano.
+            </p>
+            <h3 className="mt-4 text-2xl">
+              Here are some of my key achievements:
+            </h3>
+            <div className="flex flex-wrap gap-4 mt-4">
+              <div className="bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg">
+                ✨ 10 years of teaching experience
               </div>
-            </motion.div>
-          </section>
+              <div className="bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg">
+                🎓 ARCT in Piano Performance
+              </div>
+              <div className="bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg">
+                🎵 Bachelor of Music from UBC
+              </div>
+              <div className="bg-blue-700 text-white px-4 py-2 rounded-lg shadow-lg">
+                📚 Specialized in Classical, RCM, and Theory
+              </div>
+            </div>
+          </motion.div>
+        </section>
+        <div className="flex justify-center">
+          <motion.button
+            className="bg-gray-600 text-white px-8 py-3 rounded-lg"
+            whileHover={{
+              scale: 1.1,
+              backgroundColor: "#4B5563",
+              rotate: "-2deg",
+            }}
+            transition={{ type: "spring", stiffness: 300 }}
+            onClick={() => navigate("/bio")}
+          >
+            Detailed Bio
+          </motion.button>
         </div>
-      </Page>
+      </Section>
 
-      <Page title="The Studio Experience" anchorName="studio-experience">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">
-              The Studio Experience
-            </h2>
-            <p className="mb-4">
-              Welcome to my home studio, featuring a beautiful grand piano in a
-              warm, inspiring environment. Nestled in the ❤️ of Calgary, where
-              the city's vibrant energy meets a cozy, artistic atmosphere, I
-              provide personalized lessons tailored to each student's goals and
-              learning style.
-            </p>
-          </section>
-        </div>
-      </Page>
+      <Section title="The Studio Experience" anchorName="studio-experience">
+        <section className="grid md:grid-cols-2 gap-8 mb-12">
+          <p className="text-lg leading-relaxed mb-4">
+            Welcome to my home studio, a cozy and inspiring space featuring a
+            beautiful grand piano. Located in the ❤️ of Calgary, this artistic
+            environment is perfect for nurturing your musical journey. I provide
+            comprehensive instruction that balances technique, musicianship, and
+            expressive performance across both classical and contemporary
+            styles. Students are encouraged to participate in concerts and
+            studio recitals, offering valuable performance experience and
+            boosting their confidence.
+          </p>
+          <p className="text-lg leading-relaxed mb-4">
+            Each lesson plan is personalized to align with the student's goals
+            and interests, ensuring a fun and engaging learning experience.
+            Whether you're preparing for exams, competitions, or simply playing
+            for enjoyment, my studio offers the ideal setting for your musical
+            growth.
+          </p>
+          <p className="text-lg leading-relaxed mb-4">
+            Lessons can be online or at Shannon's home studio. Lessons proceed
+            on a weekly basis.
+          </p>
+          {/* <div className="flex justify-center">
+            <img
+              src="/tower.png"
+              alt="Calgary Tower"
+              style={{ maxWidth: "none", width: "1200px" }}
+            />
+          </div> */}
+        </section>
+      </Section>
 
-      <Page title="Lesson Scheduling" anchorName="lesson-scheduling">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">Lesson Scheduling</h2>
-            <p className="mb-4">
-              Lessons can be online or at Shannon's home studio. Lessons proceed
-              on a weekly basis.
-            </p>
-            <p className="mb-4">
-              It's never too late to start! Get a free trial lesson.
-            </p>
-          </section>
-        </div>
-      </Page>
+      {/* <Section title="Lesson Scheduling" anchorName="lesson-scheduling">
+        <section className="mb-12">
+          <p className="mb-4">
+            Lessons can be online or at Shannon's home studio. Lessons proceed
+            on a weekly basis.
+          </p>
+          <p className="mb-4">
+            It's never too late to start! Get a free trial lesson.
+          </p>
+        </section>
+      </Section> */}
 
-      <Page title="Meet Clementine" anchorName="meet-clementine">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <section className="bg-gray-50 p-6 rounded-lg mb-12">
-            <h2 className="text-2xl font-semibold mb-4">
-              Meet Clementine - Your Feline Teaching Assistant
-            </h2>
-            <div className="flex items-center gap-6  text-black">
-              <img
-                src="clementine-selfie.jpg"
-                alt="Clementine the cat"
-                className="w-48 h-48 rounded-full object-cover"
-              />
-              <p className="italic">
-                "Hi! I'm Clementine, the resident comfort coordinator. While
-                Shannon handles the music, I ensure each student feels right at
-                home. My specialties include purr-fect moral support and
-                occasional piano bench companionship. 🐱"
+      <Section
+        title="Meet Clementine - The Assistant"
+        anchorName="meet-clementine"
+      >
+        <section className="grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-1 flex justify-center">
+            <img
+              // src="clementine-selfie-phone.png"
+              src="clementine-selfie.jpg"
+              alt="Clementine the cat"
+              className="rounded-lg shadow-lg"
+            />
+          </div>
+          <div className="md:col-span-2 flex flex-col justify-center">
+            <p className="bg-gray-50 p-6 rounded-lg text-black italic text-lg leading-relaxed">
+              "Hi! 👋 I'm Clementine, the resident comfort coordinator. While
+              Shannon handles the music, I ensure each student feels right at
+              home. My specialties include purr-fect moral support and
+              occasional piano bench companionship. 🐱"
+            </p>
+          </div>
+        </section>
+      </Section>
+
+      <Section title="Student Reviews" anchorName="student-reviews">
+        <section className="mb-12">
+          <Marquee pauseOnHover className="[--duration:20s]">
+            {reviews.map((review, index) => (
+              <ReviewCard key={index} {...review} />
+            ))}
+          </Marquee>
+        </section>
+      </Section>
+
+      <Section
+        title="Start Your Musical Journey"
+        anchorName="start-your-journey"
+      >
+        <section className="text-center">
+          <p className="text-lg leading-relaxed mb-4">
+            Embark on a musical adventure with me! I offer personalized piano
+            lessons tailored to your goals and interests. Whether you're a
+            beginner or an advanced player, my expertise and passion for
+            teaching will guide you every step of the way.
+          </p>
+          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
+            Book Your First Lesson
+          </button>
+        </section>
+      </Section>
+
+      <Section title="Frequently Asked Questions" anchorName="faq">
+        <section className="mb-12">
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-xl font-semibold">What ages do you teach?</h3>
+              <p>
+                I teach students of all ages, from young children to adults.
               </p>
             </div>
-          </section>
-        </div>
-      </Page>
-
-      <Page title="Student Reviews" anchorName="student-reviews">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">Student Reviews</h2>
-            <Marquee pauseOnHover className="[--duration:20s]">
-              {reviews.map((review, index) => (
-                <ReviewCard key={index} {...review} />
-              ))}
-            </Marquee>
-          </section>
-        </div>
-      </Page>
-
-      <Page title="Start Your Musical Journey" anchorName="start-your-journey">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <section className="text-center">
-            <h2 className="text-2xl font-semibold mb-4">
-              Ready to Begin Your Musical Journey?
-            </h2>
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
-              Book Your First Lesson
-            </button>
-          </section>
-        </div>
-      </Page>
-
-      <Page title="Frequently Asked Questions" anchorName="faq">
-        <div className="max-w-4xl mx-auto px-4 py-8">
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-4">
-              Frequently Asked Questions
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold">
-                  What ages do you teach?
-                </h3>
-                <p>
-                  I teach students of all ages, from young children to adults.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">
-                  Do I need my own piano?
-                </h3>
-                <p>
-                  While having your own piano is beneficial for practice, I also
-                  offer guidance on selecting the right instrument for your
-                  needs.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">
-                  How often are lessons?
-                </h3>
-                <p>
-                  Lessons are typically held once a week, but I can accommodate
-                  different schedules as needed.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">
-                  Can I take online lessons?
-                </h3>
-                <p>
-                  Yes, I offer both in-person and online lessons to suit your
-                  preferences.
-                </p>
-              </div>
+            <div>
+              <h3 className="text-xl font-semibold">Do I need my own piano?</h3>
+              <p>
+                While having your own piano is beneficial for practice, I also
+                offer guidance on selecting the right instrument for your needs.
+              </p>
             </div>
-          </section>
-        </div>
+            <div>
+              <h3 className="text-xl font-semibold">How often are lessons?</h3>
+              <p>
+                Lessons are typically held once a week, but I can accommodate
+                different schedules as needed.
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold">
+                Can I take online lessons?
+              </h3>
+              <p>
+                Yes, I offer both in-person and online lessons to suit your
+                preferences.
+              </p>
+            </div>
+          </div>
+        </section>
+      </Section>
+
+      <Page footer title="Footer" anchorName="footer">
+        <Footer />
       </Page>
     </Fullpage>
   );
 }
 
 export const meta: MetaFunction = () => {
-  const title = "Piano Lessons with Shannon - Classical & RCM Piano Teacher";
+  const title = "Piano Lessons - Shannon Ding";
   const description =
     "Experience exceptional piano instruction with Shannon, an ARCT-certified teacher with 10 years of experience. Offering lessons for all ages and levels in a welcoming environment with Clementine, our feline teaching assistant.";
   const imageUrl = "/images/shannon-piano.jpg";
