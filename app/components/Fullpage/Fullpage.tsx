@@ -44,8 +44,9 @@ function getPropsValues<T>(propName: string, children: React.ReactNode): T[] {
   function extractProps(node: React.ReactNode) {
     React.Children.forEach(node, (child) => {
       if (React.isValidElement(child)) {
-        if (child.props[propName] !== undefined) {
-          values.push(child.props[propName] as T);
+        const propValue = child.props[propName];
+        if (propValue !== undefined && propValue !== null && propValue !== "") {
+          values.push(propValue as T);
         }
         if (child.props.children) {
           extractProps(child.props.children);
