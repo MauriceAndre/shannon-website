@@ -26,6 +26,8 @@ const Navbar = () => {
     { name: "Home", path: "/" },
     { name: "Piano Lessons", path: "/piano" },
     { name: "English Tutoring", path: "/english" },
+    { name: "Bio", path: "/bio" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -39,7 +41,12 @@ const Navbar = () => {
             Shannon Ding
           </span>
         </Link>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div className="flex items-center md:order-2 space-x-3 rtl:space-x-reverse">
+          <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+            Book A Lesson
+          </button>
+        </div>
+        <div className="flex md:order-3 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <a
             href="https://www.instagram.com/shannon.ding/"
             className="text-white text-xl hover:text-green-500 transition duration-300 ease-in-out transform hover:scale-110"
