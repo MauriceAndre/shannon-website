@@ -8,6 +8,7 @@ import FlipWords from "~/components/FlipWords/FlipWords";
 import { TextHighlight } from "~/components/HeroHighlight/TextHighlight";
 import Fullpage from "~/components/Fullpage/Fullpage";
 import Page from "~/components/Fullpage/Page";
+import Footer from "~/components/Footer/Footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -133,62 +134,9 @@ export default function Index() {
         </div>
       </Page>
 
-      {/* <div className="absolute inset-0 z-1 flex flex-col items-center justify-center text-center text-white">
-        <h1 className="text-6xl font-bold md:mb-4">
-          <span style={{ textShadow: "4px 4px 8px rgba(0, 0, 0, 0.7)" }}>
-            <TextHighlight>
-              <FlipWords words={["Piano", "English"]} />
-            </TextHighlight>{" "}
-          </span>
-          <span
-            style={{
-              textShadow: "0 0 10px #000, 0 0 20px #000, 0 0 30px #000",
-            }}
-          >
-            Lessons
-          </span>
-        </h1>
-        <h2
-          className="text-6xl font-light"
-          style={{
-            textShadow: "0 0 10px #000, 0 0 20px #000, 0 0 30px #000",
-          }}
-        >
-          in the <span className="text-red-500">♥</span> of
-        </h2>
-      </div>
-      <div className="absolute bottom-10 w-full flex justify-center z-2">
-        <button
-          onClick={() =>
-            window.scrollTo({ top: window.innerHeight, behavior: "smooth" })
-          }
-          className="bg-white text-black p-2 rounded-full w-40 border-2 border-black flex flex-col items-center"
-        >
-          Pick a Class <br />
-          <img
-            src="/arrow-down.svg"
-            alt="Scroll down"
-            style={{ width: "20px", marginTop: "4px" }}
-          />
-        </button>
-      </div>
-      <div className="h-screen flex flex-col items-center content-center justify-around">
-        <h2 className="text-5xl font-bold mb-4">Pick a Class</h2>
-        <div className="flex flex-col md:flex-row justify-around content-center w-full">
-          <Program
-            className="w-full md:w-1/2 mb-4 md:mb-0"
-            title="Piano Lessons"
-            SvgComponent={PianoSvg}
-            url="piano"
-          />
-          <Program
-            className="w-full md:w-1/2"
-            title="English Tutoring"
-            SvgComponent={BookSvg}
-            url="english"
-          />
-        </div>
-      </div> */}
+      <Page footer title="Footer" anchorName="footer">
+        <Footer />
+      </Page>
     </Fullpage>
   );
 }
