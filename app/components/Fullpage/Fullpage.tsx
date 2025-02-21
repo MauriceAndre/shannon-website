@@ -48,9 +48,6 @@ function getPropsValues<T>(propName: string, children: React.ReactNode): T[] {
         if (propValue !== undefined && propValue !== null && propValue !== "") {
           values.push(propValue as T);
         }
-        if (child.props.children) {
-          extractProps(child.props.children);
-        }
       }
     });
   }
