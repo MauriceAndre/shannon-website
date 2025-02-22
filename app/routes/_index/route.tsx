@@ -76,6 +76,7 @@ export default function Index() {
                   </TextHighlight>{" "}
                 </span>
                 <span
+                  className="block md:inline"
                   style={{
                     textShadow: "0 0 10px #000, 0 0 20px #000, 0 0 30px #000",
                   }}
