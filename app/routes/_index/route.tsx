@@ -45,10 +45,14 @@ export default function Index() {
               alt="Calgary"
               className={`${styles["hero-image-background"]} absolute`}
             />
-            <img
+            <motion.img
               src="/clouds.png"
               alt="Calgary"
               className={`${styles["hero-image-clouds"]} absolute`}
+              initial={{ scale: 0.5 }}
+              transition={{ duration: 4, ease: [0.42, 0, 0.58, 1] }}
+              whileInView={{ scale: [0.5, 1] }}
+              viewport={{ once: false }}
             />
             <img
               src="/tower.png"
@@ -72,6 +76,7 @@ export default function Index() {
                   </TextHighlight>{" "}
                 </span>
                 <span
+                  className="block md:inline"
                   style={{
                     textShadow: "0 0 10px #000, 0 0 20px #000, 0 0 30px #000",
                   }}
@@ -92,7 +97,7 @@ export default function Index() {
         </div>
 
         <div className="absolute bottom-8 w-full flex flex-col items-center text-center">
-          <p className="text-white mb-2">Pick a Class</p>
+          <p className="text-white mb-2 text-xl">Pick a Class</p>
           <a href="#pick-a-class">
             <motion.img
               src="/arrow-down.svg"
