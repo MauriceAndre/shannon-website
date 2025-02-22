@@ -97,7 +97,7 @@ export default function Index() {
         </div>
 
         <div className="absolute bottom-8 w-full flex flex-col items-center text-center">
-          <p className="text-white mb-2">Pick a Class</p>
+          <p className="text-white mb-2 text-xl">Pick a Class</p>
           <a href="#pick-a-class">
             <motion.img
               src="/arrow-down.svg"
