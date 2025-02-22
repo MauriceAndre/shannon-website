@@ -45,10 +45,14 @@ export default function Index() {
               alt="Calgary"
               className={`${styles["hero-image-background"]} absolute`}
             />
-            <img
+            <motion.img
               src="/clouds.png"
               alt="Calgary"
               className={`${styles["hero-image-clouds"]} absolute`}
+              initial={{ scale: 0.5 }}
+              transition={{ duration: 4, ease: [0.42, 0, 0.58, 1] }}
+              whileInView={{ scale: [0.5, 1] }}
+              viewport={{ once: false }}
             />
             <img
               src="/tower.png"
