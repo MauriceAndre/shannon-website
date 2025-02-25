@@ -8,7 +8,6 @@ import FlipWords from "~/components/FlipWords/FlipWords";
 import { TextHighlight } from "~/components/HeroHighlight/TextHighlight";
 import Fullpage from "~/components/Fullpage/Fullpage";
 import Page from "~/components/Fullpage/Page";
-import Footer from "~/components/Footer/Footer";
 
 export const meta: MetaFunction = () => {
   return [
@@ -137,10 +136,6 @@ export default function Index() {
             />
           </div>
         </div>
-      </Page>
-
-      <Page footer title="Footer" anchorName="footer">
-        <Footer />
       </Page>
     </Fullpage>
   );

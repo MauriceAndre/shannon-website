@@ -1,19 +1,30 @@
 import React from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import "./styles.css";
+import Footer from "../Footer/Footer";
+import Page from "./Page";
 
 interface FullpageProps {
   children?: React.ReactNode;
+  footer?: boolean;
 }
 
-const Fullpage = ({ children }: FullpageProps) => {
-  const navigationTooltips = getPropsValues<string>("title", children);
-  const anchors = getPropsValues<string>("anchorName", children);
+const Fullpage = ({ children, footer = true }: FullpageProps) => {
+  const childrenArray = React.Children.toArray(children);
+  if (footer) {
+    childrenArray.push(
+      <Page footer title="Footer" anchorName="footer">
+        <Footer />
+      </Page>
+    );
+  }
+
+  const navigationTooltips = getPropsValues<string>("title", childrenArray);
+  const anchors = getPropsValues<string>("anchorName", childrenArray);
 
   return (
     <ReactFullpage
-      //fullpage options
-      // licenseKey={process.env.FULLPAGE_API_KEY}
+      licenseKey="H79NK-WQIQ8-KB7QH-JA2IH-XIMRL"
       scrollingSpeed={1000} /* Options here */
       credits={{ enabled: false }} /* Add this line */
       navigation={true}
@@ -25,7 +36,7 @@ const Fullpage = ({ children }: FullpageProps) => {
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
-            {React.Children.map(children, (child) => {
+            {React.Children.map(childrenArray, (child) => {
               if (React.isValidElement(child)) {
                 return React.cloneElement(child, { fullpageApi } as any);
               }
