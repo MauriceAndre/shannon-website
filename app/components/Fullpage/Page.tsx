@@ -1,8 +1,8 @@
 import { fullpageApi as FullpageApi } from "@fullpage/react-fullpage";
 
 interface PageProps {
-  title?: string;
-  anchorName?: string;
+  title: string;
+  anchorName: string;
   children?: React.ReactNode;
   style?: React.CSSProperties;
   fullpageApi?: FullpageApi;

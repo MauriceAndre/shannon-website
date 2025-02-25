@@ -3,7 +3,6 @@ import { Marquee } from "~/components/Marquee/Marquee";
 import Fullpage from "~/components/Fullpage/Fullpage";
 import Page from "~/components/Fullpage/Page";
 import { motion } from "motion/react";
-import Footer from "~/components/Footer/Footer";
 import FAQ from "~/components/FAQ/FAQ";
 
 const reviews = [
@@ -329,10 +328,6 @@ export default function PianoPage() {
           </FAQ>
         </section>
       </Section>
-
-      <Page footer title="Footer" anchorName="footer">
-        <Footer />
-      </Page>
     </Fullpage>
   );
 }

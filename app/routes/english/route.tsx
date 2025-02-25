@@ -6,12 +6,12 @@ import Fullpage from "~/components/Fullpage/Fullpage";
 export default function EnglishPage() {
   return (
     <Fullpage>
-      <Page title="Section 1">
+      <Page title="Section 1" anchorName="section1">
         <div className="flex flex-col items-center justify-center h-screen">
           <motion.h1>Page 1</motion.h1>
         </div>
       </Page>
-      <Page title="Section 2">
+      <Page title="Section 2" anchorName="section2">
         <p>Section 2</p>
       </Page>
     </Fullpage>
