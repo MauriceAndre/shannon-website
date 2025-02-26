@@ -4,6 +4,8 @@ import Fullpage from "~/components/Fullpage/Fullpage";
 import Page from "~/components/Fullpage/Page";
 import { motion } from "motion/react";
 import FAQ from "~/components/FAQ/FAQ";
+import "./piano.css";
+import BlockQuote from "~/components/BlockQuote/BlockQuote";
 
 const reviews = [
   {
@@ -293,12 +295,12 @@ export default function PianoPage() {
             />
           </div>
           <div className="md:col-span-2 flex flex-col justify-center">
-            <p className="bg-gray-50 p-6 rounded-lg text-black italic text-lg leading-relaxed">
-              "Hi! 👋 I'm Clementine, the resident comfort coordinator. While
+            <BlockQuote>
+              Hi! 👋 I'm Clementine, the resident comfort coordinator. While
               Shannon handles the music, I ensure each student feels right at
               home. My specialties include purr-fect moral support and
-              occasional piano bench companionship. 🐱"
-            </p>
+              occasional piano bench companionship. 🐱
+            </BlockQuote>
           </div>
         </section>
       </Section>
