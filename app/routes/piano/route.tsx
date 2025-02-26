@@ -93,7 +93,17 @@ export default function PianoPage() {
         ></iframe>
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12 text-center">
-            <h1 className="text-8xl font-bold mb-4">Piano Lessons</h1>
+            <h1
+              className="text-8xl font-bold mb-4"
+              style={{
+                textShadow:
+                  "0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(100,149,237,0.3)",
+              }}
+            >
+              Piano
+              <br />
+              Lessons
+            </h1>
             <p className="text-xl text-gray-200">
               Nurturing Musical Excellence for All Ages and Levels
             </p>
@@ -107,9 +117,11 @@ export default function PianoPage() {
             transition={{ repeat: Infinity, duration: 4, delay: 0 }}
             src="/music-note-1.png"
             style={{
-              width: "100px",
+              width: "11vw",
+              maxWidth: "100px",
               top: "20%",
               left: "15%",
+              zIndex: -1,
             }}
           />
           <motion.img
@@ -118,9 +130,11 @@ export default function PianoPage() {
             transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}
             src="/music-note-3.png"
             style={{
-              width: "70px",
+              width: "8vw",
+              maxWidth: "70px",
               top: "10%",
               left: "50%",
+              zIndex: -1,
             }}
           />
           <motion.img
@@ -129,9 +143,11 @@ export default function PianoPage() {
             transition={{ repeat: Infinity, duration: 4, delay: 1 }}
             src="/music-note-2.png"
             style={{
-              width: "100px",
-              top: "30%",
-              right: "15%",
+              width: "11vw",
+              maxWidth: "100px",
+              top: "20%",
+              right: "13%",
+              zIndex: -1,
             }}
           />
         </div>
