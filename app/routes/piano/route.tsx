@@ -78,6 +78,17 @@ export default function PianoPage() {
   return (
     <Fullpage>
       <Page title="Intro" anchorName="intro">
+        <iframe
+          className="overlay-video"
+          src="https://www.youtube.com/embed/s71I_EWJk7I?si=ihxM9L4f-CsleMLc&autoplay=1&mute=1&controls=0&start=16&loop=1"
+          data-keepplaying="true"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          title="YouTube video player"
+          frameBorder="0"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          style={{ filter: "brightness(0.6)" }}
+        ></iframe>
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12 text-center">
             <h1 className="text-8xl font-bold mb-4">Piano Lessons</h1>
