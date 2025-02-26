@@ -4,6 +4,8 @@ import Fullpage from "~/components/Fullpage/Fullpage";
 import Page from "~/components/Fullpage/Page";
 import { motion } from "motion/react";
 import FAQ from "~/components/FAQ/FAQ";
+import "./piano.css";
+import BlockQuote from "~/components/BlockQuote/BlockQuote";
 
 const reviews = [
   {
@@ -78,9 +80,30 @@ export default function PianoPage() {
   return (
     <Fullpage>
       <Page title="Intro" anchorName="intro">
+        <iframe
+          className="overlay-video"
+          src="https://www.youtube.com/embed/s71I_EWJk7I?si=ihxM9L4f-CsleMLc&autoplay=1&mute=1&controls=0&start=16&loop=1"
+          data-keepplaying="true"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          title="YouTube video player"
+          frameBorder="0"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          style={{ filter: "brightness(0.6)" }}
+        ></iframe>
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12 text-center">
-            <h1 className="text-8xl font-bold mb-4">Piano Lessons</h1>
+            <h1
+              className="text-8xl font-bold mb-4"
+              style={{
+                textShadow:
+                  "0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(100,149,237,0.3)",
+              }}
+            >
+              Piano
+              <br />
+              Lessons
+            </h1>
             <p className="text-xl text-gray-200">
               Nurturing Musical Excellence for All Ages and Levels
             </p>
@@ -94,9 +117,11 @@ export default function PianoPage() {
             transition={{ repeat: Infinity, duration: 4, delay: 0 }}
             src="/music-note-1.png"
             style={{
-              width: "100px",
+              width: "11vw",
+              maxWidth: "100px",
               top: "20%",
               left: "15%",
+              zIndex: -1,
             }}
           />
           <motion.img
@@ -105,9 +130,11 @@ export default function PianoPage() {
             transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}
             src="/music-note-3.png"
             style={{
-              width: "70px",
+              width: "8vw",
+              maxWidth: "70px",
               top: "10%",
               left: "50%",
+              zIndex: -1,
             }}
           />
           <motion.img
@@ -116,9 +143,11 @@ export default function PianoPage() {
             transition={{ repeat: Infinity, duration: 4, delay: 1 }}
             src="/music-note-2.png"
             style={{
-              width: "100px",
-              top: "30%",
-              right: "15%",
+              width: "11vw",
+              maxWidth: "100px",
+              top: "20%",
+              right: "13%",
+              zIndex: -1,
             }}
           />
         </div>
@@ -282,12 +311,12 @@ export default function PianoPage() {
             />
           </div>
           <div className="md:col-span-2 flex flex-col justify-center">
-            <p className="bg-gray-50 p-6 rounded-lg text-black italic text-lg leading-relaxed">
-              "Hi! 👋 I'm Clementine, the resident comfort coordinator. While
+            <BlockQuote>
+              Hi! 👋 I'm Clementine, the resident comfort coordinator. While
               Shannon handles the music, I ensure each student feels right at
               home. My specialties include purr-fect moral support and
-              occasional piano bench companionship. 🐱"
-            </p>
+              occasional piano bench companionship. 🐱
+            </BlockQuote>
           </div>
         </section>
       </Section>
@@ -323,7 +352,12 @@ export default function PianoPage() {
         <section className="mb-12">
           <FAQ>
             {faqItems.map(({ question, answer }, index) => (
-              <FAQ.Item itemKey={index} question={question} answer={answer} />
+              <FAQ.Item
+                key={index}
+                itemKey={index}
+                question={question}
+                answer={answer}
+              />
             ))}
           </FAQ>
         </section>
