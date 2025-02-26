@@ -336,7 +336,12 @@ export default function PianoPage() {
         <section className="mb-12">
           <FAQ>
             {faqItems.map(({ question, answer }, index) => (
-              <FAQ.Item itemKey={index} question={question} answer={answer} />
+              <FAQ.Item
+                key={index}
+                itemKey={index}
+                question={question}
+                answer={answer}
+              />
             ))}
           </FAQ>
         </section>
