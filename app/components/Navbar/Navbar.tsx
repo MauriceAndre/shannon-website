@@ -92,6 +92,7 @@ const Navbar = () => {
               <li key={item.name}>
                 <Link
                   to={item.path}
+                  onClick={() => setIsOpen(false)}
                   className={`block py-2 px-3 text-white rounded-sm md:hover:underline md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-white dark:hover:text-black md:dark:hover:bg-transparent dark:border-gray-700 ${
                     selected === item.path ? "font-bold" : ""
                   }`}
