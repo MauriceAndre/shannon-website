@@ -5,6 +5,7 @@ import Page from "~/components/Fullpage/Page";
 import { motion } from "motion/react";
 import FAQ from "~/components/FAQ/FAQ";
 import BlockQuote from "~/components/BlockQuote/BlockQuote";
+import Button from "~/components/Button/Button";
 
 const reviews = [
   {
@@ -81,13 +82,7 @@ export default function PianoPage() {
       <Page title="Intro" anchorName="intro">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12 text-center">
-            <h1
-              className="text-8xl font-bold mb-4"
-              style={{
-                textShadow:
-                  "0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(100,149,237,0.3)",
-              }}
-            >
+            <h1 className="text-8xl font-bold mb-4">
               Piano
               <br />
               Lessons
@@ -95,9 +90,7 @@ export default function PianoPage() {
             <p className="text-xl text-gray-200">
               Nurturing Musical Excellence for All Ages and Levels
             </p>
-            <button className="bg-blue-600 text-white mt-6 px-8 py-3 rounded-lg hover:bg-blue-700 transition">
-              Book Your First Lesson
-            </button>
+            <Button className="mt-6">Book Your First Lesson</Button>
           </section>
           <motion.img
             className="absolute invert"
@@ -225,18 +218,7 @@ export default function PianoPage() {
           </motion.div>
         </section>
         <div className="flex justify-center">
-          <motion.button
-            className="bg-gray-600 text-white px-8 py-3 rounded-lg"
-            whileHover={{
-              scale: 1.1,
-              backgroundColor: "#4B5563",
-              rotate: "-2deg",
-            }}
-            transition={{ type: "spring", stiffness: 300 }}
-            onClick={() => navigate("/bio")}
-          >
-            Detailed Bio
-          </motion.button>
+          <Button>Detailed Bio</Button>
         </div>
       </Section>
 
@@ -330,9 +312,7 @@ export default function PianoPage() {
             beginner or an advanced player, my expertise and passion for
             teaching will guide you every step of the way.
           </p>
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition">
-            Book Your First Lesson
-          </button>
+          <Button>Book Your First Lesson</Button>
         </section>
       </Section>
 
