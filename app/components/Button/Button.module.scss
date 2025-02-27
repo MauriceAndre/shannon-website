@@ -1,0 +1,53 @@
+﻿.button {
+  @apply font-bold uppercase transition-all;
+
+  background: white;
+  color: black;
+  font-family: "Bangers", cursive; /* Bold comic-style font */
+  border: 4px solid black;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+
+  /* Increased box shadow for more pronounced 3D effect */
+  box-shadow: 8px 8px 0px black;
+  transform: translateY(-4px);
+
+  &:hover {
+    background: #f0f0f0;
+  }
+
+  /* Reduce the CSS active state effect as we're handling this with React state now */
+  &:active {
+    transition-duration: 0.05s;
+  }
+}
+
+.small {
+  @apply px-4 py-2 text-sm;
+  border-width: 3px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 0px black;
+  transform: translateY(-3px);
+}
+
+.default {
+  @apply px-5 py-2.5 text-base;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0px black;
+  transform: translateY(-3.5px);
+}
+
+.medium {
+  @apply px-6 py-3 text-lg;
+  border-radius: 12px;
+  box-shadow: 7px 7px 0px black;
+  transform: translateY(-4px);
+}
+
+.large {
+  @apply px-8 py-4 text-2xl;
+  border-radius: 14px;
+  box-shadow: 10px 10px 0px black;
+  transform: translateY(-5px);
+}
