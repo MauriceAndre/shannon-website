@@ -7,6 +7,7 @@ config.autoAddCss = false;
 
 import "./Navbar.css";
 import { useEffect, useState } from "react";
+import Button from "../Button/Button";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,9 +43,7 @@ const Navbar = () => {
           </span>
         </Link>
         <div className="flex items-center md:order-2 space-x-3 rtl:space-x-reverse">
-          <button className="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
-            Book A Lesson
-          </button>
+          <Button size="small">Book A Lesson</Button>
         </div>
         <div className="flex md:order-3 space-x-3 md:space-x-0 rtl:space-x-reverse">
           <a
