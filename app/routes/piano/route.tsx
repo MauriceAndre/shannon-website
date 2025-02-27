@@ -81,13 +81,7 @@ export default function PianoPage() {
       <Page title="Intro" anchorName="intro">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <section className="mb-12 text-center">
-            <h1
-              className="text-8xl font-bold mb-4"
-              style={{
-                textShadow:
-                  "0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(100,149,237,0.3)",
-              }}
-            >
+            <h1 className="text-8xl font-bold mb-4">
               Piano
               <br />
               Lessons
